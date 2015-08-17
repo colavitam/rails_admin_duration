@@ -1,25 +1,27 @@
-.form-inline
+= stylesheet_link_tag 'rails_admin/ra.duration'
+
+=form.fields_for field.name, class: "form-inline" do |nested_form|
   .aligned-set
     %div
-      = form.number_field field.method_name.to_s + "_days", field.html_attributes.merge({ value: field.days, min: 0, class: "form-control", style: "width: 50px;" })
-      %span{style: "display: inline-block; width: 10px;"}= ","
-    = form.label field.method_name.to_s + "_days", :days, style: "font-weight: normal; display: block; margin-left: -5px;"
-
-
-  .aligned-set
-    %div
-      = form.number_field field.method_name.to_s + "_hours", field.html_attributes.merge({ value: field.hours, min: 0, max: 23, class: "form-control", style: "width: 50px;" })
-      %span{style: "display: inline-block; width: 10px;"}= ":"
-    = form.label field.method_name.to_s + "_hours", :hours, style: "font-weight: normal; display: block; margin-left: -5px;"
+      = nested_form.number_field :days, field.html_attributes.merge({ value: field.days, min: 0, class: "form-control duration-field" })
+      %span.mid-label= ","
+    = nested_form.label :days, :days, class: "below-label"
 
 
   .aligned-set
     %div
-      = form.number_field field.method_name.to_s + "_minutes", field.html_attributes.merge({ value: field.minutes, min: 0, max: 59, class: "form-control", style: "width: 50px;" })
-      %span{style: "display: inline-block; width: 10px;"}= ":"
-    = form.label field.method_name.to_s + "_minutes", :minutes, style: "font-weight: normal; display: block; margin-left: -5px;"
+      = nested_form.number_field :hours, field.html_attributes.merge({ value: field.hours, min: 0, max: 23, class: "form-control duration-field" })
+      %span.mid-label= ":"
+    = nested_form.label :hours, :hours, class: "below-label"
+
+
+  .aligned-set
+    %div
+      = nested_form.number_field :minutes, field.html_attributes.merge({ value: field.minutes, min: 0, max: 59, class: "form-control duration-field" })
+      %span.mid-label= ":"
+    = nested_form.label :minutes, :minutes, class: "below-label"
   
 
   .aligned-set
-    = form.number_field field.method_name.to_s + "_seconds", field.html_attributes.merge({ value: field.seconds, min: 0, max: 59, class: "form-control", style: "width: 50px;" })
-    = form.label field.method_name.to_s + "_seconds", :seconds, style: "font-weight: normal; display: block;"
+    = nested_form.number_field :seconds, field.html_attributes.merge({ value: field.seconds, min: 0, max: 59, class: "form-control duration-field" })
+    = nested_form.label :seconds, :seconds, class: "below-label"

@@ -1,0 +1,20 @@
+.aligned-set {
+  display: inline-block;
+  text-align: center;
+}
+
+.mid-label {
+  display: inline-block;
+  width: 10px;
+}
+
+.below-label {
+  font-weight: normal;
+  display: block;
+  margin-left: -5px;
+}
+
+.duration-field {
+  display: inline-block;
+  width: 50px !important;
+}
