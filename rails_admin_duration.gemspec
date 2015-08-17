@@ -9,12 +9,13 @@ Gem::Specification.new do |s|
   s.version     = RailsAdminDuration::VERSION
   s.authors     = ["Michael Colavita"]
   s.email       = ["colavitam@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsAdminDuration."
-  s.description = "TODO: Description of RailsAdminDuration."
+  s.homepage    = "https://github.com/colavitam/rails_admin_duration"
+  s.summary     = "RailsAdminDuration adds a duration field type to RailsAdmin."
+  s.description = "RailsAdminDuration adds a duration field type to RailsAdmin. It stores durations in seconds (like Rails's Duration type) and can be used with integer columns."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.2.2"
+  s.add_dependency "rails", ">= 4.2.0"
+  s.add_dependency "rails_admin", ">= 0.6.8"
 end
